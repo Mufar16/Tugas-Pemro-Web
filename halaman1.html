@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>halaman1</title>
+</head>
+<body>
+    <form onsubmit="return validatePassword()">
+    <table border="1" cellpadding="15">
+        <tr>
+            <th colspan="2">Registrasi</th>
+        </tr>
+        <tr>
+            <th>Nama Depan :</th>
+            <th><input type="text"placeholder="Isi disini"></th>
+        </tr>
+        <tr>
+            <th>Nama Belakang :</th>
+            <th><input type="text"placeholder="Isi disini"></th>
+        </tr>
+        <tr>
+            <th>Alamat :</th>
+            <th><input type="text"placeholder="Isi disini"></th>
+        </tr>
+        <tr>
+            <th>Tanggal Lahir :</th>
+            <td><input type="date" placeholder="Pilih tanggal"></td>
+        </tr>
+        <tr>
+            <th>Jenis Kelamin :</th>
+            <td>
+                <select name="Jenis Kelamin">
+                    <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Password :</th>
+            <td><input type="password" id="password" placeholder="Masukkan password" required></td>
+        </tr>
+        <tr>
+            <th>Konfirmasi Password :</th>
+            <td><input type="password" id="confirm_password" placeholder="Masukkan password lagi" required></td>
+        </tr>
+        <tr>
+            <th>Browse Foto</th>
+            <th><input type="file"></th>
+        </tr>
+        <tr>
+            <th colspan="2"><button>Kirim</button></th>
+        </tr>
+    </table>
+    </form>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+        
+            if (password !== confirmPassword) {
+                alert("Password dan konfirmasi password tidak sama.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
